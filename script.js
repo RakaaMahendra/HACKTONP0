@@ -36,7 +36,7 @@ buttonStart.addEventListener("click", (e) => {
   // Show welcome page
   // formPage.classList.add("hidden");
   homePage.style.display = 'none' 
-  body.className = 'bg-ijo' 
+  body.classList.add('bg-ijo')
   welcomePage.classList.remove("hidden");
   welcomeMessage.textContent = `Welcome, ${userName}! Let's begin your meditation journey.`;
   timeSelection.style.display = "block";
@@ -80,16 +80,17 @@ function startMeditation(minutes) {
       clearInterval(timerInterval);
       endMeditation();
     }
-  }, 1000);
+  }, 1);
 }
 
 // End meditation
+const meditationTimeElement = document.getElementById('meditation-time');
 function endMeditation() {
   meditationAudio.pause();
   meditationPage.classList.add("hidden");
   resultPage.classList.remove("hidden");
+  meditationTimeElement.textContent = meditationDuration;
 }
-
 
 // Daily Goals
 const buttonGoals = document.querySelectorAll('.goal')
@@ -102,8 +103,19 @@ let goalTime = 0;
 
 function compareTimeGoal(time) {
   let totalTime = goalTime + Number(time)
-  console.log(totalTime);
-  
   return totalTime
 }
 
+const listenAgain = document.querySelector('.listen-again')
+listenAgain.addEventListener('click',function() {
+  welcomePage.classList.remove("hidden");
+  resultPage.classList.add("hidden");
+});
+
+
+const finished = document.querySelector('.finish')
+finished.addEventListener('click',function() {
+  homePage.style.display = '' 
+  body.classList.remove('bg-ijo');
+  resultPage.classList.add("hidden");
+});
