@@ -34,6 +34,7 @@ buttonStart.addEventListener("click", (e) => {
 
   // Show welcome page
   // formPage.classList.add("hidden");
+  homePage.style.display = 'none' 
   welcomePage.classList.remove("hidden");
   welcomeMessage.textContent = `Welcome, BRO! Let's begin your meditation journey.`;
 });
