@@ -67,7 +67,6 @@ img {
     font-size: 1rem;
     padding: 10px 15px;
     border: none;
-    border-radius: 8px;
   }
   
   input, select, textarea {
@@ -83,10 +82,17 @@ img {
   }
   
   button:not(.goal, .start) {
-    background: linear-gradient(135deg, #4caf50, #2ecc71);
-    color: #fff;
+    /* background: linear-gradient(135deg, #4caf50, #2ecc71); */
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5%;
+    background-color: #fff;
+    border: 1px solid black;
+    color: #000000;
     cursor: pointer;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.196);
     transition: transform 0.3s ease, background 0.3s ease;
+    font-family: 'forum';
   }
   
   button:hover {
@@ -132,6 +138,7 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
   position: relative;
   z-index: 1;
+  background-size: cover;
 }
 
 header {
@@ -249,6 +256,20 @@ ul li {
   margin: 0.5rem auto ;
 }
 
+#welcome-page {
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  font-family: "forum";
+}
+
+.bg-ijo {
+  background-image: url("background-page.jpg");
+}
 
 
 

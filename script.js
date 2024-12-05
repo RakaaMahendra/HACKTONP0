@@ -11,6 +11,7 @@ const timerDisplay = document.getElementById("timer");
 const buttonStart = document.querySelector('.start')
 const homePage = document.querySelector('.home')
 const timeSelection = document.getElementById("time-selection");
+const body = document.querySelector('body')
 
 
 // Variables to store user data
@@ -32,16 +33,10 @@ buttonStart.addEventListener("click", (e) => {
     alert("Please enter your name.")
     return;
   }
-  // const name = document.getElementById("name").value;
-  // const age = document.getElementById("age").value;
-  // const gender = document.getElementById("gender").value;
-
-  // // Save user data
-  // userName = name;
-
   // Show welcome page
   // formPage.classList.add("hidden");
   homePage.style.display = 'none' 
+  body.className = 'bg-ijo' 
   welcomePage.classList.remove("hidden");
   welcomeMessage.textContent = `Welcome, ${userName}! Let's begin your meditation journey.`;
   timeSelection.style.display = "block";
