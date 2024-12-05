@@ -89,3 +89,21 @@ function endMeditation() {
   meditationPage.classList.add("hidden");
   resultPage.classList.remove("hidden");
 }
+
+
+// Daily Goals
+const buttonGoals = document.querySelectorAll('.goal')
+buttonGoals.forEach((goalTime) => {
+  let value = goalTime.value;
+  goalTime.addEventListener('click', function() { compareTimeGoal(value); })
+}) 
+
+let goalTime = 0;
+
+function compareTimeGoal(time) {
+  let totalTime = goalTime + Number(time)
+  console.log(totalTime);
+  
+  return totalTime
+}
+
