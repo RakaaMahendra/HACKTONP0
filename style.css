@@ -139,6 +139,7 @@ body {
   position: relative;
   z-index: 1;
   background-size: cover;
+  overflow: hidden; 
 }
 
 header {
@@ -271,6 +272,13 @@ ul li {
   background-image: url("background-page.jpg");
 }
 
+.box-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 70vh;
+}
 
 
 /* ⁡⁢⁣⁣​‌‍‌--DECORATION LINE--​⁡ */

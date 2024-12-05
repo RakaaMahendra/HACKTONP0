@@ -78,7 +78,7 @@
 
     <!-- End Login / Home Page -->
 
-    
+    <div class="box-content">
     <div class="container hidden" id="welcome-page">
       <h1 id="welcome-message"></h1>
       <p>Choose your meditation duration:</p>
@@ -87,19 +87,21 @@
       <button onclick="startMeditation(5)">5 Minutes</button>
     </div>
 
-    <div class="container hidden" id="meditation-page">
-      <h1>Meditation in Progress...</h1>
-      <h2>Selamat menikmati lagu Sushi Hiro...</h2>
-      <audio id="meditation-audio" loop>
-        <!-- <source src="meditation.mp3" type="audio/mpeg" /> -->
-        Your browser does not support the audio element.
-      </audio>
-      <p id="timer"></p>
-    </div>
-
-    <div class="container hidden" id="result-page">
-      <h1>Congratulations!</h1>
-      <p>You completed your meditation session. Great job!</p>
+    
+      <div class="container hidden" id="meditation-page">
+        <h1>Meditation in Progress...</h1>
+        <h2>Selamat menikmati lagu Sushi Hiro...</h2>
+        <audio id="meditation-audio" loop>
+          <!-- <source src="meditation.mp3" type="audio/mpeg" /> -->
+          Your browser does not support the audio element.
+        </audio>
+        <p id="timer"></p>
+      </div>
+  
+      <div class="container hidden" id="result-page">
+        <h1>Congratulations!</h1>
+        <p>You completed your meditation session. Great job!</p>
+      </div>
     </div>
 
 
