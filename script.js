@@ -9,6 +9,7 @@ const meditationAudio = document.getElementById("meditation-audio");
 const timerDisplay = document.getElementById("timer");
 
 const buttonStart = document.querySelector('.start')
+const homePage = document.querySelector('.home')
 
 
 // Variables to store user data
@@ -49,7 +50,7 @@ function startMeditation(minutes) {
     meditationAudio.src = "music-1-minutes.mp3"; // Fallback music
   }
 
-  welcomePage.classList.add("hidden");
+  homePage.classList.add("container hidden");
   meditationPage.classList.remove("hidden");
   meditationAudio.play();
 
