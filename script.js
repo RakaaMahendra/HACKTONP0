@@ -43,8 +43,7 @@ buttonStart.addEventListener("click", (e) => {
   // formPage.classList.add("hidden");
   homePage.style.display = 'none' 
   welcomePage.classList.remove("hidden");
-  formPage.classList.add("hidden");
-  welcomeMessage.textContent = `Welcome, BRO! Let's begin your meditation journey.`;
+  welcomeMessage.textContent = `Welcome, ${userName}! Let's begin your meditation journey.`;
   timeSelection.style.display = "block";
 });
 
