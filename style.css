@@ -257,6 +257,11 @@ ul li {
   margin: 0.5rem auto ;
 }
 
+.goal.active {   
+  transform: translateY(-3px);  
+  background:linear-gradient(135deg, #27ae60, #1abc9c);    
+}
+
 #result-page,
 #welcome-page,
 #meditation-page {

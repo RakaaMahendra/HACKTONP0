@@ -80,7 +80,7 @@ function startMeditation(minutes) {
       clearInterval(timerInterval);
       endMeditation();
     }
-  }, 1);
+  }, 1000);
 }
 
 // End meditation
@@ -96,11 +96,20 @@ function endMeditation() {
   meditate(listenTime)
 }
 
+let timeGoal = function(value) {
+  return value;
+}
 // Daily Goals
 const buttonGoals = document.querySelectorAll('.goal')
 buttonGoals.forEach((goalTime) => {
   let value = goalTime.value;
-  goalTime.addEventListener('click', function() { compareTimeGoal(value); })
+  goalTime.addEventListener('click', function() { 
+    // hapus semua class active dari semua tombol
+    buttonGoals.forEach(btn => btn.classList.remove('active'));
+    //tambahkan ke tombol yang di klik
+    goalTime.classList.add('active');
+    goalTimes = Number(value);
+  })
 }) 
 
 
@@ -123,16 +132,18 @@ finished.addEventListener('click',function() {
 const timeSisa = document.querySelector('#meditation-sisa')
 const resultSisa = document.querySelector('#result-goal')
 
-let goalTime = 10; 
+let goalTimes; 
 let timeSpent = 0;
 function meditate(minutes) {
   timeSpent += minutes; 
-  let remainingTime = goalTime - timeSpent; 
+  let remainingTime = goalTimes - timeSpent; 
     timeSisa.innerText = remainingTime;
   if (remainingTime > 0) {
     timeSisa.innerText = remainingTime;
   } else {
     resultSisa.innerText = 'You have reached your meditation goal!'
+    goalTimes = 0;
+    timeSpent = 0;
   }
 }
 
