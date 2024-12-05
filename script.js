@@ -10,6 +10,7 @@ const timerDisplay = document.getElementById("timer");
 
 const buttonStart = document.querySelector('.start')
 const homePage = document.querySelector('.home')
+const timeSelection = document.getElementById("time-selection");
 
 
 // Variables to store user data
@@ -25,6 +26,12 @@ const meditationMusic = {
 // Handle form submission
 buttonStart.addEventListener("click", (e) => {
   e.preventDefault();
+  userName = document.getElementById("name").value;
+
+  if (!userName){
+    alert("Please enter your name.")
+    return;
+  }
   // const name = document.getElementById("name").value;
   // const age = document.getElementById("age").value;
   // const gender = document.getElementById("gender").value;
@@ -36,7 +43,16 @@ buttonStart.addEventListener("click", (e) => {
   // formPage.classList.add("hidden");
   homePage.style.display = 'none' 
   welcomePage.classList.remove("hidden");
+  formPage.classList.add("hidden");
   welcomeMessage.textContent = `Welcome, BRO! Let's begin your meditation journey.`;
+  timeSelection.style.display = "block";
+});
+
+document.querySelectorAll(".time-option").forEach(button => {
+  button.addEventListener("click", (e) => {
+    meditationDuration = parseInt(e.target.getAttribute("data-time"));
+    startMeditation(meditationDuration);
+  });
 });
 
 // Start meditation
@@ -51,7 +67,7 @@ function startMeditation(minutes) {
     meditationAudio.src = "music-1-minutes.mp3"; // Fallback music
   }
 
-  homePage.classList.add("container hidden");
+  welcomePage.classList.add("hidden");
   meditationPage.classList.remove("hidden");
   meditationAudio.play();
 
