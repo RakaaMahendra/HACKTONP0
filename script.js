@@ -8,6 +8,9 @@ const welcomeMessage = document.getElementById("welcome-message");
 const meditationAudio = document.getElementById("meditation-audio");
 const timerDisplay = document.getElementById("timer");
 
+const buttonStart = document.querySelector('.start')
+
+
 // Variables to store user data
 let userName = "";
 let meditationDuration = 0;
@@ -19,19 +22,19 @@ const meditationMusic = {
 };
 
 // Handle form submission
-userForm.addEventListener("submit", (e) => {
+buttonStart.addEventListener("click", (e) => {
   e.preventDefault();
-  const name = document.getElementById("name").value;
-  const age = document.getElementById("age").value;
-  const gender = document.getElementById("gender").value;
+  // const name = document.getElementById("name").value;
+  // const age = document.getElementById("age").value;
+  // const gender = document.getElementById("gender").value;
 
-  // Save user data
-  userName = name;
+  // // Save user data
+  // userName = name;
 
   // Show welcome page
-  formPage.classList.add("hidden");
+  // formPage.classList.add("hidden");
   welcomePage.classList.remove("hidden");
-  welcomeMessage.textContent = `Welcome, ${name}! Let's begin your meditation journey.`;
+  welcomeMessage.textContent = `Welcome, BRO! Let's begin your meditation journey.`;
 });
 
 // Start meditation
