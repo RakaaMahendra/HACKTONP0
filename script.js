@@ -12,7 +12,7 @@ const buttonStart = document.querySelector('.start')
 const homePage = document.querySelector('.home')
 const timeSelection = document.getElementById("time-selection");
 const body = document.querySelector('body')
-
+const inputName = document.querySelector('.username')
 
 // Variables to store user data
 let userName = "";
@@ -85,11 +85,15 @@ function startMeditation(minutes) {
 
 // End meditation
 const meditationTimeElement = document.getElementById('meditation-time');
+
+
 function endMeditation() {
   meditationAudio.pause();
   meditationPage.classList.add("hidden");
   resultPage.classList.remove("hidden");
   meditationTimeElement.textContent = meditationDuration;
+  let listenTime = meditationDuration;
+  meditate(listenTime)
 }
 
 // Daily Goals
@@ -99,12 +103,6 @@ buttonGoals.forEach((goalTime) => {
   goalTime.addEventListener('click', function() { compareTimeGoal(value); })
 }) 
 
-let goalTime = 0;
-
-function compareTimeGoal(time) {
-  let totalTime = goalTime + Number(time)
-  return totalTime
-}
 
 const listenAgain = document.querySelector('.listen-again')
 listenAgain.addEventListener('click',function() {
@@ -118,4 +116,26 @@ finished.addEventListener('click',function() {
   homePage.style.display = '' 
   body.classList.remove('bg-ijo');
   resultPage.classList.add("hidden");
+  inputName.value = ''
 });
+
+
+const timeSisa = document.querySelector('#meditation-sisa')
+const resultSisa = document.querySelector('#result-goal')
+
+let goalTime = 10; 
+let timeSpent = 0;
+function meditate(minutes) {
+  timeSpent += minutes; 
+  let remainingTime = goalTime - timeSpent; 
+    timeSisa.innerText = remainingTime;
+  if (remainingTime > 0) {
+    timeSisa.innerText = remainingTime;
+  } else {
+    resultSisa.innerText = 'You have reached your meditation goal!'
+  }
+}
+
+
+
+
