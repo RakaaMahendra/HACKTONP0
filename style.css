@@ -257,7 +257,9 @@ ul li {
   margin: 0.5rem auto ;
 }
 
-#welcome-page {
+#result-page,
+#welcome-page,
+#meditation-page {
   border-radius: 15px;
   padding: 30px;
   text-align: center;
@@ -268,8 +270,16 @@ ul li {
   font-family: "forum";
 }
 
+#timer {
+  color: #000000;
+  font-size: 100px;
+}
+
 .bg-ijo {
   background-image: url("background-page.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .box-content {
