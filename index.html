@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meditation Web</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container" id="form-page">
-    <h1>Meditation App</h1>
-    <form id="user-form">
-      <input type="text" id="name" placeholder="Enter your name" required />
-      <input type="number" id="age" placeholder="Enter your age" required />
-      <select id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meditation Web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="form-page">
+      <h1>Meditation App</h1>
+      <form id="user-form">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input type="number" id="age" placeholder="Enter your age" required />
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
-  <div class="container hidden" id="welcome-page">
-    <h1 id="welcome-message"></h1>
-    <p>Choose your meditation duration:</p>
-    <button onclick="startMeditation(1)">1 Minute</button>
-    <button onclick="startMeditation(2)">2 Minutes</button>
-    <button onclick="startMeditation(5)">5 Minutes</button>
-  </div>
+    <div class="container hidden" id="welcome-page">
+      <h1 id="welcome-message"></h1>
+      <p>Choose your meditation duration:</p>
+      <button onclick="startMeditation(1)">1 Minute</button>
+      <button onclick="startMeditation(2)">2 Minutes</button>
+      <button onclick="startMeditation(5)">5 Minutes</button>
+    </div>
 
-  <div class="container hidden" id="meditation-page">
-    <h1>Meditation in Progress...</h1>
-    <audio id="meditation-audio" loop>
-      <source src="meditation.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <p id="timer"></p>
-  </div>
+    <div class="container hidden" id="meditation-page">
+      <h1>Meditation in Progress...</h1>
+      <h2>Selamat menikmati lagu Sushi Hiro...</h2>
+      <audio id="meditation-audio" loop>
+        <source src="meditation.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <p id="timer"></p>
+    </div>
 
-  <div class="container hidden" id="result-page">
-    <h1>Congratulations!</h1>
-    <p>You completed your meditation session. Great job!</p>
-  </div>
+    <div class="container hidden" id="result-page">
+      <h1>Congratulations!</h1>
+      <p>You completed your meditation session. Great job!</p>
+    </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
